@@ -128,12 +128,12 @@ const Home = () => {
       </section>
 
       {/* Pillars Section 1 */}
-      <section className="full-width-section" style={{ background: 'var(--bg-darker)' }}>
+      <section className="full-width-section" style={{ background: '#080c16', color: 'white' }}>
         <div className="container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
-            <div className="eloqwnt-bullet">Market Research</div>
-            <h3 style={{ fontSize: '3rem', marginBottom: '1.5rem', marginTop: '1rem', maxWidth: '800px' }}>Market Research & Competitive Analysis</h3>
-            <p style={{ fontSize: '1.5rem', maxWidth: '800px' }}>Gain unparalleled insights into market trends and outmaneuver competitors with our robust data collection tools.</p>
+            <div className="eloqwnt-bullet" style={{ color: 'white' }}>Market Research</div>
+            <h3 style={{ fontSize: '3rem', marginBottom: '1.5rem', marginTop: '1rem', maxWidth: '800px', color: 'white' }}>Market Research & Competitive Analysis</h3>
+            <p style={{ fontSize: '1.5rem', maxWidth: '800px', color: 'rgba(255,255,255,0.8)' }}>Gain unparalleled insights into market trends and outmaneuver competitors with our robust data collection tools.</p>
           </motion.div>
         </div>
       </section>
