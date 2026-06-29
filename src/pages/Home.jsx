@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { LineChart, Globe2 } from 'lucide-react';
+import { LineChart, Globe2, CheckCircle2 } from 'lucide-react';
 import './Home.css';
 
 const fadeUp = {
@@ -20,6 +20,13 @@ const staggerContainer = {
 const Home = () => {
   const { scrollY } = useScroll();
   const yParallax = useTransform(scrollY, [0, 1000], [0, 200]);
+
+  const whyZarvant = [
+    { title: "Accuracy first", text: "We prioritize data quality over volume. Every dataset we deliver is validated and structured for immediate use." },
+    { title: "Compliance built in", text: "All our collection methods are limited to publicly accessible data and designed with legal and ethical standards in mind." },
+    { title: "Global reach", text: "We operate across 150+ countries, enabling geo-targeted intelligence at any scale." },
+    { title: "Fast turnaround", text: "From request to delivery, our infrastructure is built for speed without sacrificing reliability." }
+  ];
 
   return (
     <div>
@@ -91,6 +98,30 @@ const Home = () => {
                 <div style={{ fontSize: '4rem', fontWeight: 'bold', color: 'var(--text-heading)', lineHeight: 1 }}>99.9%</div>
                 <p style={{ marginTop: '0.5rem', fontWeight: '500' }}>Uptime</p>
               </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Zarvant Section */}
+      <section className="full-width-section" style={{ background: 'var(--bg-card)' }}>
+        <div className="container">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}>
+            <div className="eloqwnt-bullet">The Zarvant Advantage</div>
+            <h2 style={{ fontSize: '3.5rem', marginBottom: '4rem', maxWidth: '800px' }}>Why enterprises choose Zarvant</h2>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
+              {whyZarvant.map((item, index) => (
+                <div key={index} style={{ borderTop: '2px solid var(--text-heading)', paddingTop: '2rem' }}>
+                  <h3 style={{ fontSize: '1.75rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <CheckCircle2 size={24} />
+                    {item.title}
+                  </h3>
+                  <p style={{ fontSize: '1.25rem', color: 'var(--text-main)', lineHeight: '1.6' }}>
+                    {item.text}
+                  </p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
